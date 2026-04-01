@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Md Shamim Personal Website</title>
+  <title>Md Shamim</title>
 
   <style>
     * {
@@ -15,206 +15,151 @@
 
     body {
       background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.6;
+      color: white;
     }
 
     .container {
       width: 90%;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
-      padding-bottom: 40px;
+      padding: 20px;
     }
 
-    .header {
-      position: relative;
+    /* HEADER WITH COVER */
+    header {
+      background: url("cover/cover-photo.jpg") center/cover no-repeat;
+      padding: 80px 20px;
+      border-radius: 20px;
       text-align: center;
-      margin-top: 30px;
+      position: relative;
       margin-bottom: 40px;
     }
 
-    .cover {
-      width: 100%;
-      height: 320px;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-    }
-
-    .cover img {
+    /* dark overlay */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
+      background: rgba(0,0,0,0.5);
+      border-radius: 20px;
     }
 
-    .profile {
-      position: absolute;
-      left: 50%;
-      bottom: -70px;
-      transform: translateX(-50%);
+    header * {
+      position: relative;
+      z-index: 1;
     }
 
-    .profile img {
-      width: 160px;
-      height: 160px;
+    header img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      object-fit: cover;
       border: 5px solid white;
-      background: white;
+      object-fit: cover;
+      margin-bottom: 15px;
     }
 
-    .header h1 {
-      margin-top: 90px;
-      font-size: 42px;
-      color: #d1d5db;
+    header h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
     }
 
-    .header p {
-      font-size: 22px;
-      margin-top: 10px;
-      color: #e5e7eb;
+    header p {
+      font-size: 20px;
     }
 
     section {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 30px;
-      margin-top: 30px;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      background: rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
     }
 
     h2 {
       color: #38bdf8;
-      margin-bottom: 20px;
-      font-size: 30px;
-    }
-
-    .info p {
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    .contact-links a {
-      display: inline-block;
-      margin: 10px 10px 0 0;
-      padding: 10px 16px;
-      background: #0ea5e9;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .contact-links a:hover {
-      background: #0284c7;
+      margin-bottom: 15px;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
     }
 
     .gallery img {
       width: 100%;
-      height: 250px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 15px;
+      border-radius: 10px;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 15px;
+      background: #0ea5e9;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      color: #cbd5e1;
-    }
-
-    @media (max-width: 768px) {
-      .cover {
-        height: 220px;
-      }
-
-      .profile img {
-        width: 130px;
-        height: 130px;
-      }
-
-      .profile {
-        bottom: -55px;
-      }
-
-      .header h1 {
-        margin-top: 75px;
-        font-size: 32px;
-      }
-
-      .header p {
-        font-size: 18px;
-      }
+      padding: 20px;
+      color: #aaa;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <header class="header">
-      <div class="cover">
-        <img src="cover/cover-photo.jpg" alt="cover">
-      </div>
+  <!-- HEADER -->
+  <header>
+    <img src="profile.jpg" alt="profile">
+    <h1>Md: Shamim</h1>
+    <p>আমার ব্যক্তিগত ওয়েবসাইটে আপনাকে স্বাগতম</p>
+  </header>
 
-      <div class="profile">
-        <img src="profile.jpg" alt="profile">
-      </div>
+  <!-- ABOUT -->
+  <section>
+    <h2>আমার সম্পর্কে</h2>
+    <p>নাম: Md: Shamim</p>
+    <p>ঠিকানা: Mohadevpur, Naogaon, Rajshahi</p>
+    <p>বর্তমান ঠিকানা: Naogaon</p>
+    <p>পেশা: Freelancer</p>
+    <p>ইমেইল: md1713225@gmail.com</p>
+  </section>
 
-      <h1>Md: Shamim</h1>
-      <p>আমার ব্যক্তিগত ওয়েবসাইটে আপনাকে স্বাগতম</p>
-    </header>
+  <!-- CONTACT -->
+  <section>
+    <h2>যোগাযোগ</h2>
+    <div class="contact">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </section>
 
-    <section>
-      <h2>আমার সম্পর্কে</h2>
-      <div class="info">
-        <p><strong>নাম:</strong> Md: Shamim</p>
-        <p><strong>ঠিকানা:</strong> Mohadevpur, Naogaon, Rajshahi</p>
-        <p><strong>বর্তমান ঠিকানা:</strong> Naogaon</p>
-        <p><strong>পেশা:</strong> Freelancer</p>
-        <p><strong>ব্লাড গ্রুপ:</strong> A+ (Available Now)</p>
-        <p><strong>ইমেইল:</strong> md1713225@gmail.com</p>
-        <p><strong>ফোন:</strong> 01857943730</p>
-        <p><strong>হোয়াটসঅ্যাপ:</strong> 01738917693</p>
-        <p>
-          আমি একজন সাধারণ মানুষ। এখানে আমার ব্যক্তিগত তথ্য, যোগাযোগের মাধ্যম,
-          এবং কিছু প্রিয় ছবি দেওয়া আছে।
-        </p>
-      </div>
-    </section>
+  <!-- GALLERY -->
+  <section>
+    <h2>আমার ছবি</h2>
+    <div class="gallery">
+      <img src="pic1.jpg">
+      <img src="pic 2.jpg">
+      <img src="pic3.jpg">
+      <img src="pic4.png">
+    </div>
+  </section>
 
-    <section>
-      <h2>যোগাযোগ</h2>
-      <div class="contact-links">
-        <a href="https://www.facebook.com/mdshamim0403" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/mdshamim0403/" target="_blank">Instagram</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">Telegram</a>
-        <a href="#">TikTok</a>
-      </div>
-    </section>
+  <footer>
+    © 2025 Md Shamim
+  </footer>
 
-    <section>
-      <h2>গ্যালারি</h2>
-      <div class="gallery">
-        <img src="pic1.jpg" alt="pic1">
-        <img src="pic 2.jpg" alt="pic2">
-        <img src="pic3.jpg" alt="pic3">
-        <img src="pic4.png" alt="pic4">
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2025 Md Shamim | All Rights Reserved</p>
-    </footer>
-
-  </div>
+</div>
 
 </body>
 </html>
