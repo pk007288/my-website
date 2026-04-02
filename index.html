@@ -14,8 +14,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: url("background.jpg") no-repeat center center fixed;
-      background-size: cover;
+      background: #f3f4f6;
       color: #111827;
       line-height: 1.6;
     }
@@ -27,15 +26,14 @@
     }
 
     header {
-      background: rgba(255, 255, 255, 0.20);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 25px;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("cover-photo.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
       text-align: center;
-      padding: 45px 20px;
-      color: #0f172a;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 50px 20px;
+      color: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
 
     header img {
@@ -43,69 +41,59 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid rgba(255, 255, 255, 0.9);
+      border: 5px solid white;
       margin-bottom: 15px;
-      background: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+      background: white;
     }
 
     header h1 {
       font-size: 38px;
       margin-bottom: 8px;
-      color: #0f172a;
     }
 
     header p {
       font-size: 18px;
-      color: #1e293b;
     }
 
     section {
+      background: white;
       margin-top: 25px;
       padding: 25px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
     h2 {
       color: #0284c7;
       margin-bottom: 15px;
       font-size: 28px;
-      border-left: 5px solid #38bdf8;
+      border-left: 5px solid #0ea5e9;
       padding-left: 10px;
     }
 
     .about p {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       font-size: 17px;
-      color: #0f172a;
     }
 
     .contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .contact a {
       display: inline-block;
-      padding: 10px 18px;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      padding: 10px 16px;
+      background: #0ea5e9;
       color: white;
       text-decoration: none;
       border-radius: 10px;
       transition: 0.3s;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(14, 165, 233, 0.25);
     }
 
     .contact a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(14, 165, 233, 0.35);
+      background: #0284c7;
     }
 
     .gallery {
@@ -118,8 +106,8 @@
       width: 100%;
       height: 220px;
       object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
       transition: transform 0.3s ease;
     }
 
@@ -129,23 +117,12 @@
 
     footer {
       text-align: center;
-      margin: 30px 0 15px;
-      color: #0f172a;
+      margin: 30px 0 10px;
+      color: #6b7280;
       font-size: 15px;
-      font-weight: 500;
-      background: rgba(255, 255, 255, 0.55);
-      padding: 12px;
-      border-radius: 12px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
     }
 
     @media (max-width: 768px) {
-      .container {
-        width: 94%;
-        margin: 20px auto;
-      }
-
       header {
         padding: 35px 15px;
       }
@@ -164,15 +141,11 @@
       }
 
       h2 {
-        font-size: 23px;
+        font-size: 24px;
       }
 
       .about p {
         font-size: 16px;
-      }
-
-      .gallery img {
-        height: 200px;
       }
     }
   </style>
@@ -181,12 +154,14 @@
 
   <div class="container">
 
+    <!-- HEADER -->
     <header>
       <img src="profile.jpg" alt="Profile Photo">
       <h1>Md Shamim</h1>
       <p>আমার ব্যক্তিগত ওয়েবসাইটে আপনাকে স্বাগতম</p>
     </header>
 
+    <!-- ABOUT -->
     <section class="about">
       <h2>আমার সম্পর্কে</h2>
       <p><strong>নাম:</strong> Md Shamim</p>
@@ -199,15 +174,17 @@
       <p><strong>ইমেইল:</strong> md1713225@gmail.com</p>
     </section>
 
+    <!-- CONTACT -->
     <section>
       <h2>যোগাযোগ</h2>
       <div class="contact">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">WhatsApp</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">WhatsApp</a>
       </div>
     </section>
 
+    <!-- GALLERY -->
     <section>
       <h2>আমার ছবি</h2>
       <div class="gallery">
