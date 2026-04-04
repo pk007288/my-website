@@ -112,14 +112,33 @@
   justify-content: center;
 }
 
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
 .contact a {
-  padding: 14px;
-  border-radius: 50%;
-  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.contact a span {
+  font-size: 11px;
+  margin-top: 5px;
   color: white;
 }
 
-/* Colors */
 .fb { background: #1877f2; }
 .ig { background: #e4405f; }
 .tt { background: linear-gradient(45deg, #000, #ff0050); }
@@ -131,10 +150,9 @@
 .tg { background: #0088cc; }
 .em { background: #d44638; }
 
-/* Hover */
 .contact a:hover {
-  transform: scale(1.2);
-  opacity: 0.9;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
     .gallery {
