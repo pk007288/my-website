@@ -10,26 +10,26 @@
   <!-- ✅ এইটা add করুন -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: url("background.jpg") no-repeat center center fixed;
-      background-size: cover;
-      color: #111827;
-      line-height: 1.6;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #111827;
+  line-height: 1.6;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 30px auto;
-    }
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
 .hero {
   width: 100%;
   height: 420px;
@@ -55,6 +55,7 @@
   position: relative;
   z-index: 5;
 }
+
 .profile-card h1 {
   font-size: 28px;
   margin: 12px 0 6px;
@@ -66,7 +67,8 @@
   color: #000000 !important;
   text-shadow: none;
 }
-    .profile-card img {
+
+.profile-card img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -76,52 +78,137 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-    }
+}
 
-    section {
-      margin-top: 25px;
-      padding: 25px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-    }
+section {
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
 
-    h2 {
-      color: #0284c7;
-      margin-bottom: 15px;
-      font-size: 28px;
-      border-left: 5px solid #38bdf8;
-      padding-left: 10px;
-    }
+h2 {
+  color: #0284c7;
+  margin-bottom: 15px;
+  font-size: 28px;
+  border-left: 5px solid #38bdf8;
+  padding-left: 10px;
+}
 
-    .about p {
-      margin-bottom: 10px;
-      font-size: 17px;
-      color: #0f172a;
-    }
+.about p {
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: #0f172a;
+}
 
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
 
-    .contact a {
-      display: inline-block;
-      padding: 10px 18px;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: 0.3s;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(14, 165, 233, 0.25);
-    }
+.contact a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
 
-    /* ICON BUTTON STYLE */
+.contact a span {
+  font-size: 11px;
+  margin-top: 5px;
+  color: white;
+}
+
+.fb { background: #1877f2; }
+.ig { background: #e4405f; }
+.tt { background: linear-gradient(45deg, #000, #ff0050); }
+.wa { background: #25d366; }
+.yt { background: #ff0000; }
+.li { background: #0077b5; }
+.tw { background: #000; }
+.gh { background: #333; }
+.tg { background: #0088cc; }
+.em { background: #d44638; }
+
+.contact a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  text-align: center;
+  margin: 30px 0 15px;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 94%;
+    margin: 20px auto;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery img {
+    height: 200px;
+  }
+
+  .profile-card h1 {
+    font-size: 24px;
+  }
+
+  .profile-card p {
+    font-size: 15px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+}
 .contact {
   justify-content: center;
 }
