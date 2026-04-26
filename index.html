@@ -1,13 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Md Shamim</title>
 
-  <!-- ✅ এইটা add করুন -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -17,321 +14,465 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: url("background.jpg") no-repeat center center fixed;
-      background-size: cover;
-      color: #111827;
+      color: #ffffff;
       line-height: 1.6;
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, rgba(7, 89, 133, 0.88), rgba(88, 28, 135, 0.86)),
+        url("background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.35), transparent 28%),
+        radial-gradient(circle at 85% 30%, rgba(217, 70, 239, 0.28), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.30), transparent 35%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .navbar {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: rgba(15, 23, 42, 0.42);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .nav-inner {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .brand span:first-child {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 2px solid rgba(125, 211, 252, 0.9);
+      color: #e0f2fe;
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      opacity: 0.9;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #7dd3fc;
+    }
+
+    .download-btn {
+      padding: 11px 18px;
+      border-radius: 12px;
+      color: #fff !important;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.10);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero {
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      position: relative;
+      padding-top: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .cover-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(2px) brightness(0.55);
+      transform: scale(1.03);
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.35), rgba(168, 85, 247, 0.42));
+      z-index: -1;
+    }
+
+    .profile-card {
+      width: 90%;
+      max-width: 650px;
+      margin: auto;
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+      z-index: 5;
+      padding: 25px;
+    }
+
+    .profile-card img {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.25), 0 15px 35px rgba(0, 0, 0, 0.35);
+      display: block;
+      margin: 0 auto 15px;
+    }
+
+    .profile-card h1 {
+      font-size: 40px;
+      margin: 10px 0 5px;
+      color: #ffffff;
+      text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .profile-card p {
+      font-size: 17px;
+      color: #e0f2fe;
+      font-weight: 600;
+    }
+
+    .hero-social {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .hero-social a {
+      color: #ffffff;
+      font-size: 20px;
+      opacity: 0.9;
+      transition: 0.3s;
+    }
+
+    .hero-social a:hover {
+      color: #7dd3fc;
+      transform: translateY(-4px);
     }
 
     .container {
       width: 90%;
       max-width: 1100px;
-      margin: 30px auto;
-    }
-.hero {
-  width: 100%;
-  height: 420px;
-  overflow: hidden;
-}
-
-.cover-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.profile-card {
-  width: 100%;
-  margin: -90px auto 0;
-  background: transparent;
-  border-radius: 0;
-  text-align: center;
-  padding: 0;
-  color: #0f172a;
-  box-shadow: none;
-  position: relative;
-  z-index: 5;
-}
-.profile-card h1 {
-  font-size: 28px;
-  margin: 12px 0 6px;
-  color: #0f172a;
-}
-
-.profile-card p {
-  font-size: 16px;
-  color: #000000 !important;
-  text-shadow: none;
-}
-    .profile-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  margin-top: -60px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+      margin: -35px auto 30px;
+      position: relative;
+      z-index: 10;
     }
 
     section {
       margin-top: 25px;
-      padding: 25px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 28px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      transition: 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.24);
     }
 
     h2 {
-      color: #0284c7;
-      margin-bottom: 15px;
+      color: #e0f2fe;
+      margin-bottom: 20px;
       font-size: 28px;
       border-left: 5px solid #38bdf8;
-      padding-left: 10px;
+      padding-left: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 28px;
     }
 
     .about p {
-      margin-bottom: 10px;
       font-size: 17px;
-      color: #0f172a;
+      color: #f8fafc;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .about strong {
+      color: #bae6fd;
     }
 
     .contact {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 15px;
+      justify-content: center;
     }
 
     .contact a {
-      display: inline-block;
-      padding: 10px 18px;
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 88px;
+      height: 82px;
+      border-radius: 16px;
       text-decoration: none;
-      border-radius: 10px;
+      color: white;
+      font-size: 22px;
       transition: 0.3s;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(14, 165, 233, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
     }
 
-    /* ICON BUTTON STYLE */
-.contact {
-  justify-content: center;
-}
+    .contact a span {
+      font-size: 11px;
+      margin-top: 6px;
+      color: white;
+      font-weight: bold;
+    }
 
-.contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
+    .fb { background: linear-gradient(135deg, #1877f2, #0ea5e9); }
+    .ig { background: linear-gradient(135deg, #833ab4, #e4405f, #f77737); }
+    .tt { background: linear-gradient(45deg, #111827, #ff0050); }
+    .wa { background: linear-gradient(135deg, #25d366, #128c7e); }
+    .yt { background: linear-gradient(135deg, #ff0000, #b91c1c); }
+    .li { background: linear-gradient(135deg, #0077b5, #0284c7); }
+    .tw { background: linear-gradient(135deg, #111827, #334155); }
+    .gh { background: linear-gradient(135deg, #333333, #0f172a); }
+    .tg { background: linear-gradient(135deg, #0088cc, #38bdf8); }
+    .em { background: linear-gradient(135deg, #a855f7, #d946ef); }
 
-.contact a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-  transition: 0.3s;
-}
+    .contact a:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.28);
+    }
 
-.contact a span {
-  font-size: 11px;
-  margin-top: 5px;
-  color: white;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
 
-.fb { background: #1877f2; }
-.ig { background: #e4405f; }
-.tt { background: linear-gradient(45deg, #000, #ff0050); }
-.wa { background: #25d366; }
-.yt { background: #ff0000; }
-.li { background: #0077b5; }
-.tw { background: #000; }
-.gh { background: #333; }
-.tg { background: #0088cc; }
-.em { background: #d44638; }
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.20);
+      transition: 0.3s;
+    }
 
-.contact a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-  .container {
-    width: 94%;
-    margin: 20px auto;
-  }
+    .gallery img:hover {
+      transform: scale(1.04);
+      filter: brightness(1.08) saturate(1.08);
+    }
 
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery img {
-    height: 200px;
-  }
-
-  header {
-    padding: 35px 15px;
-  }
-
-  header img {
-    width: 120px;
-    height: 120px;
-  }
-
-  header h1 {
-    font-size: 28px;
-  }
-
-  header p {
-    font-size: 16px;
-  }
-
-  h2 {
-    font-size: 23px;
-  }
-
-  .about p {
-    font-size: 16px;
-  }
-}
-
-  .about p {
-    font-size: 16px;
-  }
-.gallery img:hover {
-  transform: scale(1.03);
-}
     footer {
       text-align: center;
       margin: 30px 0 15px;
-      color: #0f172a;
+      color: #e0f2fe;
       font-size: 15px;
       font-weight: 500;
-      background: rgba(255, 255, 255, 0.55);
-      padding: 12px;
-      border-radius: 12px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.13);
+      padding: 15px;
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.20);
     }
-    .gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
 
-.gallery img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 14px;
-}
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
 
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+      .hero {
+        height: 470px;
+      }
 
-  .gallery img {
-    height: 200px;
-  }
-}
+      .profile-card h1 {
+        font-size: 32px;
+      }
+
+      .container {
+        width: 94%;
+        margin-top: -25px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery img {
+        height: 200px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      .about p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        height: 430px;
+      }
+
+      .profile-card img {
+        width: 110px;
+        height: 110px;
+      }
+
+      .profile-card h1 {
+        font-size: 28px;
+      }
+
+      .profile-card p {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .contact a {
+        width: 76px;
+        height: 76px;
+      }
+
+      .gallery img {
+        height: 165px;
+      }
+    }
   </style>
 </head>
 <body>
-<div class="hero">
-  <img src="cover.jpg" alt="Cover Photo" class="cover-photo">
-</div>
 
-  <header class="profile-card">
-    <img src="profile.jpg" alt="Profile Photo">
-    <h1>Md Shamim</h1>
-    <p>আমার ব্যক্তিগত ওয়েবসাইটে আপনাকে স্বাগতম</p>
-  </header>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <span>MS</span>
+        <span>Md Shamim</span>
+      </div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#gallery">Gallery</a>
+        <a href="mailto:md1713225@gmail.com" class="download-btn"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero" id="home">
+    <img src="cover.jpg" alt="Cover Photo" class="cover-photo">
+
+    <header class="profile-card">
+      <img src="profile.jpg" alt="Profile Photo">
+      <h1>Md Shamim</h1>
+      <p>Freelancer | Web Developer | Content Creator</p>
+
+      <div class="hero-social">
+        <a href="https://www.facebook.com/mdshamim0403" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/mdshamim0403/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/md-shamim-b0542229b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@mdshamim0403" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://github.com/mdshamim0403" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </header>
+  </div>
 
   <div class="container">
-    <section class="about">
-      <h2>আমার সম্পর্কে</h2>
-      <p><strong>নাম:</strong> Md Shamim</p>
-      <p><strong>ঠিকানা:</strong> Mohadevpur, Naogaon, Rajshahi</p>
-      <p><strong>বর্তমান ঠিকানা:</strong> Naogaon</p>
-      <p><strong>পেশা:</strong> Freelancer</p>
-      <p><strong>ব্লাড গ্রুপ:</strong> A+ (Available)</p>
-      <p><strong>ফোন নম্বর:</strong> 01857943730</p>
-      <p><strong>ফোন নম্বর:</strong> 01738917693</p>
-      <p><strong>ইমেইল:</strong> md1713225@gmail.com</p>
+    <section class="about" id="about">
+      <h2><i class="fa-solid fa-user"></i> আমার সম্পর্কে</h2>
+      <div class="about-grid">
+        <p><strong>নাম:</strong> Md Shamim</p>
+        <p><strong>ব্লাড গ্রুপ:</strong> A+ (Available)</p>
+        <p><strong>ঠিকানা:</strong> Mohadevpur, Naogaon, Rajshahi</p>
+        <p><strong>ফোন নম্বর ১:</strong> 01857943730</p>
+        <p><strong>বর্তমান ঠিকানা:</strong> Naogaon</p>
+        <p><strong>ফোন নম্বর ২:</strong> 01738917693</p>
+        <p><strong>পেশা:</strong> Freelancer</p>
+        <p><strong>ইমেইল:</strong> md1713225@gmail.com</p>
+      </div>
     </section>
 
-    <section>
-   <h2>যোগাযোগ</h2>
-  <div class="contact">
-  <a href="https://www.facebook.com/mdshamim0403" target="_blank" class="fb">
-    <i class="fab fa-facebook-f"></i>
-    <span>Facebook</span>
-  </a>
+    <section id="contact">
+      <h2><i class="fa-solid fa-paper-plane"></i> যোগাযোগ</h2>
+      <div class="contact">
+        <a href="https://www.facebook.com/mdshamim0403" target="_blank" class="fb"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+        <a href="https://www.instagram.com/mdshamim0403/" target="_blank" class="ig"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+        <a href="https://www.tiktok.com/@mdshamim04030" target="_blank" class="tt"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
+        <a href="https://wa.me/8801857943730?text=Hello" target="_blank" class="wa"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="https://www.youtube.com/@mdshamim0403" target="_blank" class="yt"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+        <a href="https://www.linkedin.com/in/md-shamim-b0542229b/" target="_blank" class="li"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+        <a href="https://x.com/mdshamim0403" target="_blank" class="tw"><i class="fab fa-x-twitter"></i><span>Twitter / X</span></a>
+        <a href="https://github.com/mdshamim0403" target="_blank" class="gh"><i class="fab fa-github"></i><span>GitHub</span></a>
+        <a href="https://t.me/mdshamim0403" target="_blank" class="tg"><i class="fab fa-telegram-plane"></i><span>Telegram</span></a>
+        <a href="mailto:md1713225@gmail.com" target="_blank" class="em"><i class="fas fa-envelope"></i><span>Email</span></a>
+      </div>
+    </section>
 
-  <a href="https://www.instagram.com/mdshamim0403/" target="_blank" class="ig">
-    <i class="fab fa-instagram"></i>
-    <span>Instagram</span>
-  </a>
-
-  <a href="https://www.tiktok.com/@mdshamim04030" target="_blank" class="tt">
-    <i class="fab fa-tiktok"></i>
-    <span>TikTok</span>
-  </a>
-
-  <a href="https://wa.me/8801857943730?text=Hello" target="_blank" class="wa">
-    <i class="fab fa-whatsapp"></i>
-    <span>WhatsApp</span>
-  </a>
-
-  <a href="https://www.youtube.com/@mdshamim0403" target="_blank" class="yt">
-    <i class="fab fa-youtube"></i>
-    <span>YouTube</span>
-  </a>
-
-  <a href="https://www.linkedin.com/in/md-shamim-b0542229b/" target="_blank" class="li">
-    <i class="fab fa-linkedin-in"></i>
-    <span>LinkedIn</span>
-  </a>
-
-  <a href="https://x.com/mdshamim0403" target="_blank" class="tw">
-    <i class="fab fa-x-twitter"></i>
-    <span>Twitter</span>
-  </a>
-
-  <a href="https://github.com/mdshamim0403" target="_blank" class="gh">
-    <i class="fab fa-github"></i>
-    <span>GitHub</span>
-  </a>
-
-  <a href="https://t.me/mdshamim0403" target="_blank" class="tg">
-    <i class="fab fa-telegram-plane"></i>
-    <span>Telegram</span>
-  </a>
-
-  <a href="mailto:md1713225@gmail.com" target="_blank" class="em">
-    <i class="fas fa-envelope"></i>
-    <span>Email</span>
-  </a>
-</div>
-</section>
-</section>
-
-    <section>
-      <h2>আমার ছবি</h2>
+    <section id="gallery">
+      <h2><i class="fa-solid fa-image"></i> আমার ছবি</h2>
       <div class="gallery">
         <img src="pic1.jpg" alt="Picture 1">
         <img src="pic2.jpg" alt="Picture 2">
@@ -341,9 +482,8 @@
     </section>
 
     <footer>
-      © 2025 Md Shamim | All Rights Reserved
+      © 2025 Md Shamim | All Rights Reserved 💙
     </footer>
-
   </div>
 
 </body>
